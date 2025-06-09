@@ -14,4 +14,4 @@ app.add_middleware(
 
 @app.get("/hello")
 def hello():
-    return JSONResponse(content={"message": "CI/CD is working!"})
+    return JSONResponse(content={"message": "Hello World with CI/CD is working!"})
