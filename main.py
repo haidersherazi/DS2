@@ -14,4 +14,4 @@ app.add_middleware(
 
 @app.get("/hello")
 def hello():
-    return JSONResponse(content={"message": "Hello World with CI/CD is working!"})
+    return JSONResponse(content={"message": "Auto CD from Docker Hub to Render!!"})
