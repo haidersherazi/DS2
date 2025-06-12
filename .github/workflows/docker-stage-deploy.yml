@@ -1,8 +1,8 @@
-name: CI/CD Pipeline - Build, Push and Deploy
+name: Deploy to Staging
 
 on:
   push:
-    branches: [main]
+    branches: [stage]
 
 jobs:
   build-and-deploy:
@@ -24,8 +24,7 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v5
         with:
+          context: .
+          file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/hello-api:latest
-
-      - name: Notify Render to Deploy (optional)
-        run: echo "✅ Docker image pushed. You can now set up Render auto-deploy from GitHub."
+          tags: ${{ secrets.DOCKER_USERNAME }}/hello-api-stage:latest
