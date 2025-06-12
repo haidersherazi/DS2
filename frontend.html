@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World from API</title>
+    <style>
+      body {
+        background: linear-gradient(to right, #2c3e50, #3498db);
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        margin: 0;
+      }
+
+      #message {
+        font-size: 2rem;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.8s ease-out;
+        text-align: center;
+      }
+
+      #message.show {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">FastAPI says:</h1>
+    <div id="message">Loading...</div>
+
+    <script>
+      fetch("https://hello-api-latest-0h7c.onrender.com/hello")
+        .then((response) => response.json())
+        .then((data) => {
+          const messageEl = document.getElementById("message");
+          messageEl.textContent = data.message;
+          messageEl.classList.add("show");
+        })
+        .catch((error) => {
+          console.error("Error fetching message:", error);
+          const messageEl = document.getElementById("message");
+          messageEl.textContent = "⚠️ API not reachable!";
+          messageEl.classList.add("show");
+        });
+    </script>
+  </body>
+</html>
