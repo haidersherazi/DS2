@@ -12,6 +12,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
+
 @app.get("/hello")
 def hello():
     return JSONResponse(content={"message": "Auto CD from Docker Hub to Render!!"})
