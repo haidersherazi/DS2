@@ -18,4 +18,4 @@ def read_root():
 
 @app.get("/hello")
 def hello():
-    return JSONResponse(content={"message": "Auto CD from Docker Hub to Render on Stage Environment!!"})
+    return JSONResponse(content={"message": "Hello World!"})

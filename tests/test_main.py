@@ -6,4 +6,4 @@ client = TestClient(app)
 def test_hello():
     response = client.get("/hello")
     assert response.status_code == 200
-    assert response.json() == {"message": "Auto CD from Docker Hub to Render on Stage Environment!!"}
+    assert response.json() == {"message": "Hello World!"}
