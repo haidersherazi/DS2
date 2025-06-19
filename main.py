@@ -18,4 +18,4 @@ def read_root():
 
 @app.get("/hello")
 def hello():
-    return JSONResponse(content={"message": "Hello World!!"})
+    return JSONResponse(content={"message": "Hello World. The feature is merged!!"})
