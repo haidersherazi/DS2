@@ -68,4 +68,4 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/hello-api-prod:latest
 
       - name: Notify Render to Deploy
-        run: echo "Image pushed and Render (Production) will auto-deploy via webhook."
+        run: echo "Image pushed and Render will auto-deploy via webhook."
